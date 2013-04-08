@@ -15,12 +15,6 @@ const baseSite = "https://gitweb.torproject.org/https-everywhere.git/blob_plain/
 const directory = "/src/chrome/content/rules/";
 const headString = "HEAD";
 
-window.onresize = function() {
-	var textBox = document.getElementById("source-text");
-	textBox.width = window.innerWidth - 50;
-	textBox.height = window.innerHeight - 100;
-}
-
 function sourceViewInit() {
 	if("arguments" in window && window.arguments.length > 0) {
 		var filename = window.arguments[0].xmlName;
@@ -39,6 +33,7 @@ function getURL(filename, GITCommitID) {
 function getSource(URL, filename, useHEAD) {
 	setFilenameText(filename);
 	setPathText(URL);
+	window.sizeToContent();
 	
 	var req = CC["@mozilla.org/xmlextras/xmlhttprequest;1"]
 	.createInstance(CI.nsIXMLHttpRequest);
@@ -84,4 +79,5 @@ function setFilenameText(text) {
 function setPathText(text) {
 	var textLabel = document.getElementById("path-text");
 	textLabel.value = text;
+	textLabel.href  = text;
 }

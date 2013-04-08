@@ -104,7 +104,7 @@ function viewXMLSource() {
       .getService(CI.nsIWindowMediator) 
       .getMostRecentWindow('navigator:browser');
       aWin.openDialog("chrome://https-everywhere/content/fetch-source.xul",
-              rs.xmlName, "chrome,centerscreen", 
+              rs.xmlName, "chrome,centerscreen,resizable",
               {xmlName: rs.xmlName, GITCommitID: GITID} );
     }
   }

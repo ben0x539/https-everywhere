@@ -8,23 +8,22 @@
         xmlns:html="http://www.w3.org/1999/xhtml"
         title="&https-everywhere.prefs.view_xml_source;"
         persist="screenX screenY width height"
-        style="height:80%; resize:both;"
         buttons="accept"
         height="600"
         width="650"
         onload="sourceViewInit(document)">
-        
-    
+
+
     <script type="application/x-javascript" src="fetch-source.js"/>
     <box orient="horizontal">
         <label id="filename-label" value="&https-everywhere.source.filename;:"/>
         <label id="filename-text"/>
     </box>
     <box orient="horizontal">
-    	<label id="path-label" value="URL:"/>
-    	<label id="path-text"/>
+        <label id="path-label" value="URL:"/>
+        <label id="path-text" class="text-link" />
     </box>
     <separator class="thin"/>
-    <textbox id="source-text" multiline="true" readonly="true" value="&https-everywhere.source.downloading;..."/>
+    <textbox id="source-text" flex="1" minheight="128" multiline="true" readonly="true" value="&https-everywhere.source.downloading;..."/>
     <label id="failure-label" hidden="true" value="&https-everywhere.source.unable_to_download;"/>
 </dialog>
